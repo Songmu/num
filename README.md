@@ -1,4 +1,4 @@
-num
+nuu
 =======
 
 [![Build Status](https://travis-ci.org/Songmu/num.svg?branch=master)][travis]
@@ -11,12 +11,28 @@ num
 [license]: https://github.com/Songmu/num/blob/master/LICENSE
 [godoc]: https://godoc.org/github.com/Songmu/num
 
-num short description
+The `num` command displays the argument given in binary, octal, decimal or hexadecimal number in each base.
 
 ## Synopsis
 
-```go
-// simple usage here
+```console
+$ num 0xff
+bin: 0b11111111
+oct: 0o377
+dec: 255
+hex: 0xff
+
+$ num 255
+bin: 0b11111111
+oct: 0o377
+dec: 255
+hex: 0xff
+
+$ num 0b11111111
+bin: 0b11111111
+oct: 0o377
+dec: 255
+hex: 0xff
 ```
 
 ## Description

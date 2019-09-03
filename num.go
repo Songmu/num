@@ -6,6 +6,7 @@ import (
 	"io"
 	"log"
 	"strconv"
+	"strings"
 )
 
 const cmdName = "num"
@@ -28,7 +29,19 @@ func Run(argv []string, outStream, errStream io.Writer) error {
 		return fmt.Errorf("no number specified")
 	}
 
-	dec, err := strconv.Atoi(numStr)
+	sliceIdx, base := 0, 10
+	if strings.HasPrefix(numStr, "0") && len(numStr) > 1 {
+		sliceIdx, base = 1, 8
+		switch numStr[1] {
+		case 'b', 'B':
+			sliceIdx, base = 2, 2
+		case 'o', 'O':
+			sliceIdx, base = 2, 8
+		case 'x', 'X':
+			sliceIdx, base = 2, 16
+		}
+	}
+	dec, err := strconv.ParseInt(numStr[sliceIdx:], base, 64)
 	if err != nil {
 		return err
 	}

@@ -40,7 +40,7 @@ hex: 0xff
 ## Installation
 
 ```console
-% go get github.com/Songmu/num
+% go get github.com/Songmu/num/cmd/num
 ```
 
 ## Author

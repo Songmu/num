@@ -47,7 +47,7 @@ install:
 bump: devel-deps
 	godzil release
 
-CREDITS: go.sum devel-deps
+CREDITS: devel-deps
 	gocredits -w
 
 .PHONY: crossbuild

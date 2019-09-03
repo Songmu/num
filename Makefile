@@ -40,8 +40,8 @@ build: deps
 	go build -ldflags=$(BUILD_LDFLAGS) ./cmd/num
 
 .PHONY: install
-install: build
-	mv num "$(shell go env GOPATH)/bin/"
+install:
+	go install -ldflags=$(BUILD_LDFLAGS) ./cmd/num
 
 .PHONY: bump
 bump: devel-deps
